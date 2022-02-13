@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -933,7 +933,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137436796}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1137436798
 Camera:
   m_ObjectHideFlags: 0
@@ -1322,6 +1322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 885804094}
+  trapActiveLength: 1
+  trapDormentLength: 1
 --- !u!4 &1474599204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2751921896390747936, guid: 0a96848df10fe7744b1737a07530d1a1, type: 3}
@@ -1394,6 +1396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3925985207255211087, guid: 0a96848df10fe7744b1737a07530d1a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 910a8ec8e76a7ae44af97b2f36f447b4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a96848df10fe7744b1737a07530d1a1, type: 3}
 --- !u!4 &1551738407 stripped
@@ -1468,6 +1474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3925985207255211087, guid: 0a96848df10fe7744b1737a07530d1a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 910a8ec8e76a7ae44af97b2f36f447b4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a96848df10fe7744b1737a07530d1a1, type: 3}
 --- !u!4 &1626996737 stripped
