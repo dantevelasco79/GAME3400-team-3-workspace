@@ -12,8 +12,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 783fb871e4341aa4cb1eab7131802ede, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 783fb871e4341aa4cb1eab7131802ede, type: 3}
       propertyPath: m_LocalScale.y
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 783fb871e4341aa4cb1eab7131802ede, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 11.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 783fb871e4341aa4cb1eab7131802ede, type: 3}
       propertyPath: m_LocalPosition.x
@@ -201,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8211423960902060624, guid: e25eedafaeb4d124c9cb520a6cedc87a, type: 3}
       propertyPath: m_Name
-      value: Fireball
+      value: RedTrap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25eedafaeb4d124c9cb520a6cedc87a, type: 3}

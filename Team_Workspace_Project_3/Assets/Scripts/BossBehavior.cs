@@ -5,15 +5,15 @@ using UnityEngine;
 public class BossBehavior : MonoBehaviour
 {
     public GameObject player;
-    public static int state;
+    //public static int state;
     public int trapActiveLength = 5; // how long trap will be active
     public int trapDormentLength = 5; // how long trap will be dorment
-    float countDown;
-    bool trapActive;
+    private float countDown;
+    public static bool trapActive;
     // Start is called before the first frame update
     void Start()
     {
-        state = 0;
+        //state = 0;
         trapActive = false;
     }
 
@@ -21,7 +21,6 @@ public class BossBehavior : MonoBehaviour
     void Update()
     {
         gameObject.transform.RotateAround(gameObject.transform.position, Vector3.up, Time.deltaTime * 10);
-        Debug.Log("State: " + state);
         if (!trapActive) 
         {
             if (countDown > 0)
@@ -30,7 +29,7 @@ public class BossBehavior : MonoBehaviour
             } 
             else 
             {
-                state = Random.Range(1, 3);
+                //state = Random.Range(1, 4);
                 countDown = trapDormentLength;
                 trapActive = true;
             }
@@ -43,7 +42,7 @@ public class BossBehavior : MonoBehaviour
             }
             else
             {
-                state = 0;
+                //state = 0;
                 countDown = trapDormentLength;
                 trapActive = false;
             }
