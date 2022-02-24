@@ -5,12 +5,13 @@ using UnityEngine;
 public class BeepScript : MonoBehaviour
 {
     public AudioClip beep;
-    public AudioSource continuousBeep;
+    public AudioSource flatline;
     public int gameDurationInBeeps = 60;
     float initialBeepUntilNextBeep = 1.768f;
     float timeUntilNextBeep;
     float beepCountDown;
     int beepLeft;
+    bool gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class BeepScript : MonoBehaviour
         beepCountDown = initialBeepUntilNextBeep;
         timeUntilNextBeep = initialBeepUntilNextBeep;
         beepLeft = gameDurationInBeeps;
+        gameOver = false;
     }
 
     // Update is called once per frame
@@ -37,9 +39,10 @@ public class BeepScript : MonoBehaviour
                     AudioSource.PlayClipAtPoint(beep, transform.position);
                     beepCountDown = timeUntilNextBeep;
                 }
-                else
+                else if (!gameOver)
                 {
-                    // continuousBeep.Play();
+                    flatline.Play();
+                    gameOver = true;
                     Debug.Log("he dead");
                 }
             } 
