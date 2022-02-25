@@ -41,8 +41,8 @@ public class BeepScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("Current interval: " + timeUntilNextBeep);
-                Debug.Log(Vector3.Distance(this.transform.position, player.transform.position));
+                // Debug.Log("Current interval: " + timeUntilNextBeep);
+                // Debug.Log(Vector3.Distance(this.transform.position, player.transform.position));
                 AudioSource.PlayClipAtPoint(beep, transform.position);
                 beepCountDown = timeUntilNextBeep;
             }
@@ -58,7 +58,7 @@ public class BeepScript : MonoBehaviour
                 // beep ten times more after this
                 if (beepLeft >= -10)
                 {
-                    Debug.Log("LAST TEN BEEPS, Current interval: " + timeUntilNextBeep);
+                    // Debug.Log("LAST TEN BEEPS, Current interval: " + timeUntilNextBeep);
                     beepLeft--;
                     AudioSource.PlayClipAtPoint(beep, transform.position);
                     beepCountDown = timeUntilNextBeep;
@@ -67,12 +67,12 @@ public class BeepScript : MonoBehaviour
                 {
                     flatline.Play();
                     gameOver = true;
-                    Debug.Log("he dead");
+                    // Debug.Log("he dead");
                 }
             } 
             else
             {
-                Debug.Log("Current interval: " + timeUntilNextBeep);
+                // Debug.Log("Current interval: " + timeUntilNextBeep);
                 beepLeft--;
                 AudioSource.PlayClipAtPoint(beep, transform.position);
                 timeUntilNextBeep -= 0.025f;
