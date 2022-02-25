@@ -6,12 +6,14 @@ public class BeepScript : MonoBehaviour
 {
     public AudioClip beep;
     public AudioSource flatline;
+    public GameObject player;
     public int gameDurationInBeeps = 60;
     float initialBeepUntilNextBeep = 1.768f;
     float timeUntilNextBeep;
     float beepCountDown;
     int beepLeft;
     bool gameOver;
+    bool playerApproached;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +22,37 @@ public class BeepScript : MonoBehaviour
         timeUntilNextBeep = initialBeepUntilNextBeep;
         beepLeft = gameDurationInBeeps;
         gameOver = false;
+        playerApproached = false;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (beepCountDown > 0)
+        if (!playerApproached)
+        {
+            if (Vector3.Distance(this.transform.position, player.transform.position) <= 40f)
+            {
+                playerApproached = true;
+            }
+            else if (beepCountDown > 0)
+            {
+                beepCountDown -= Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("Current interval: " + timeUntilNextBeep);
+                Debug.Log(Vector3.Distance(this.transform.position, player.transform.position));
+                AudioSource.PlayClipAtPoint(beep, transform.position);
+                beepCountDown = timeUntilNextBeep;
+            }
+        }
+        else if (beepCountDown > 0)
         {
             beepCountDown -= Time.deltaTime;
-        } else {
+        } 
+        else
+        {
             if (beepLeft <= 0)
             {
                 // beep ten times more after this
