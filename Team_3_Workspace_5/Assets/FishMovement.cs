@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FishMovement : MonoBehaviour
 {
+    public float moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,7 @@ public class FishMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position += gameObject.transform.right * Time.deltaTime;
+        gameObject.transform.Rotate(0, 0, 0.3f);
+        gameObject.transform.position += gameObject.transform.up * moveSpeed * Time.deltaTime;
     }
 }
