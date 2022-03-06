@@ -45,6 +45,25 @@ public class HumanBehavior : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Collided with the something...");
+        if (other.transform.CompareTag("Player"))
+        {
+            Debug.Log("Collided with the player!");
+            transform.localScale = new Vector3(1, 0.05f, 1);
+            walkSpeed = 0;
+            runSpeed = 0;
+            Destroy(GetComponent<Collider>());
+            Invoke("Stomped", 3);
+        }
+    }
+
+    void Stomped()
+    {
+        Destroy(gameObject);
+    }
+
     GameObject GetClosestObject(GameObject[] objects)
     {
         GameObject bestTarget = null;
