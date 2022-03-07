@@ -34,20 +34,19 @@ public class HumanBehavior : MonoBehaviour
         {
             GameObject closestSheep = GetClosestObject(sheeps);
             var distanceToClosestSheep = Vector3.Distance(transform.position, closestSheep.transform.position);
-            if (distanceToClosestSheep < chaseRange && distanceToPlayer > 1.5f * escapeRange) 
+            if (distanceToClosestSheep < chaseRange && distanceToPlayer > 1.5f * escapeRange)
             {
                 ChaseObject(closestSheep);
             }
             else
             {
-                Wander(chaseRange * 0.5f);
+                Wander(chaseRange);
             }
         }
     }
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collided with the something...");
         if (other.transform.CompareTag("Player"))
         {
             Debug.Log("Collided with the player!");
@@ -55,13 +54,9 @@ public class HumanBehavior : MonoBehaviour
             walkSpeed = 0;
             runSpeed = 0;
             Destroy(GetComponent<Collider>());
-            Invoke("Stomped", 3);
+            Destroy(GetComponent<Rigidbody>());
+            Destroy(gameObject, 3);
         }
-    }
-
-    void Stomped()
-    {
-        Destroy(gameObject);
     }
 
     GameObject GetClosestObject(GameObject[] objects)
