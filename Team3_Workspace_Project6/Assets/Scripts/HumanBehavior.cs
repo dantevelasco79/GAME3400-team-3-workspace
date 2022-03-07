@@ -18,7 +18,6 @@ public class HumanBehavior : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        sheeps = GameObject.FindGameObjectsWithTag("Sheep");
         wayPoint = transform.position;
     }
 
@@ -26,12 +25,14 @@ public class HumanBehavior : MonoBehaviour
     void Update()
     {
         var distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        Debug.Log("Distance to player: " + distanceToPlayer);
         if (distanceToPlayer < escapeRange)
         {
             EscapeFromObject(player);
         }
         else
         {
+            sheeps = GameObject.FindGameObjectsWithTag("Sheep");
             GameObject closestSheep = GetClosestObject(sheeps);
             var distanceToClosestSheep = Vector3.Distance(transform.position, closestSheep.transform.position);
             if (distanceToClosestSheep < chaseRange && distanceToPlayer > 1.5f * escapeRange)
@@ -50,7 +51,7 @@ public class HumanBehavior : MonoBehaviour
         if (other.transform.CompareTag("Player"))
         {
             Debug.Log("Collided with the player!");
-            transform.localScale = new Vector3(1, 0.05f, 1);
+            transform.localScale = new Vector3(transform.localScale.x, 0.1f * transform.localScale.y, transform.localScale.z);
             walkSpeed = 0;
             runSpeed = 0;
             Destroy(GetComponent<Collider>());
