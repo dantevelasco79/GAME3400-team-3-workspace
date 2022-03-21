@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bdf22efc8ba0c7c4fa3e05b240a16c5b, type: 2}
+  - {fileID: 2100000, guid: 27db8a982779c32478e82d53d51a5c8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,9 +105,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7546184595857182372}
+  - component: {fileID: 5995823078569306380}
   m_Layer: 0
   m_Name: Pipe
-  m_TagString: Untagged
+  m_TagString: Evidence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +129,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &5995823078569306380
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343417978372022914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.8512419
+  m_Height: 2.453887
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.21837687}
 --- !u!1 &8077003114615088158
 GameObject:
   m_ObjectHideFlags: 0
