@@ -5,7 +5,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     public GameObject point1;
-    public GameObject point2; 
+    public GameObject point2;
     public GameObject player;
     public static float teleportBuffer = 0;
     // Start is called before the first frame update
@@ -18,19 +18,20 @@ public class Teleporter : MonoBehaviour
         teleportBuffer = 0;
     }
 
-    void Update() 
+    void Update()
     {
         teleportBuffer += Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (teleportBuffer > 2f) {
+        if (teleportBuffer > 2f)
+        {
             if (point1.Equals(this.gameObject))
             {
                 player.transform.position = point2.transform.position;
-            } 
-            else 
+            }
+            else
             {
                 player.transform.position = point1.transform.position;
             }
