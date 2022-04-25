@@ -18,13 +18,13 @@ public class FogDistanceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) < 200 + PlayerData.level * 10)
+        if (Vector3.Distance(player.transform.position, transform.position) < 200 + PlayerData.level * 50)
         {
             RenderSettings.fogDensity = 0.005f;
         }
         else
         {
-            RenderSettings.fogDensity = 0.005f * (1 + (Vector3.Distance(player.transform.position, transform.position) - 199 - PlayerData.level * 10) * 0.02f);
+            RenderSettings.fogDensity = 0.005f * (1 + (Vector3.Distance(player.transform.position, transform.position) - 199 - PlayerData.level * 50) * 0.01f);
         }
     }
 }
